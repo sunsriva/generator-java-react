@@ -1,8 +1,7 @@
-Building a Fullstack Project Generator with Yeoman
+# Building a Fullstack Project Generator with Yeoman
 
----
 
-## 📖 Lesson 1: What is Yeoman and Why Use It?
+## Lesson 1: What is Yeoman and Why Use It?
 
 ### Concepts
 
@@ -15,11 +14,11 @@ Building a Fullstack Project Generator with Yeoman
 * Setting up both projects manually takes time.
 * Yeoman helps us create a **consistent boilerplate** in seconds.
 
-👉 **Outcome**: You’ll understand why we use Yeoman to generate fullstack projects.
+**Outcome**: You’ll understand why we use Yeoman to generate fullstack projects.
 
 ---
 
-## 📖 Lesson 2: Setting Up the Generator
+## Lesson 2: Setting Up the Generator
 
 ### Install prerequisites
 
@@ -49,11 +48,11 @@ export default class extends Generator {
 }
 ```
 
-👉 **Outcome**: Running `yo java-react` prompts the user.
+**Outcome**: Running `yo java-react` prompts the user.
 
 ---
 
-## 📖 Lesson 3: Generating the Backend (Spring Boot)
+##  Lesson 3: Generating the Backend (Spring Boot)
 
 ### Use Spring Initializr API
 
@@ -69,11 +68,11 @@ execSync(`unzip backend.zip -d ${artifactId}-backend`, { stdio: "inherit" });
 execSync("rm backend.zip");
 ```
 
-👉 **Outcome**: We now generate a Spring Boot project (`artifactId-backend`).
+**Outcome**: We now generate a Spring Boot project (`artifactId-backend`).
 
 ---
 
-## 📖 Lesson 4: Adding the Frontend (React + Vite)
+## Lesson 4: Adding the Frontend (React + Vite)
 
 ### Scaffold React app
 
@@ -88,11 +87,11 @@ await this.spawnCommand("npm", [
 ]);
 ```
 
-👉 **Outcome**: A frontend React app (`artifactId-frontend`) is generated alongside the backend.
+**Outcome**: A frontend React app (`artifactId-frontend`) is generated alongside the backend.
 
 ---
 
-## 📖 Lesson 5: Parent POM and Multi-Module Setup
+## Lesson 5: Parent POM and Multi-Module Setup
 
 We want a structure like this:
 
@@ -119,11 +118,11 @@ my-app/
 </project>
 ```
 
-👉 **Outcome**: We have a **multi-module project**, where only the backend is Maven-managed.
+**Outcome**: We have a **multi-module project**, where only the backend is Maven-managed.
 
 ---
 
-## 📖 Lesson 6: Wiring Frontend into Backend Build
+## Lesson 6: Wiring Frontend into Backend Build
 
 We want the backend JAR to serve React automatically.
 
@@ -155,7 +154,7 @@ We want the backend JAR to serve React automatically.
 </plugin>
 ```
 
-👉 **Outcome**:
+**Outcome**:
 
 1. Run `npm run build` in frontend.
 2. Run `mvn clean package` in parent project.
@@ -163,18 +162,18 @@ We want the backend JAR to serve React automatically.
 
 ---
 
-## 📖 Lesson 7: Adding Extra Features
+## Lesson 7: Adding Extra Features
 
 * Prompt for **Java version** (`11`, `17`, `21`)
 * Prompt for **packaging** (`jar` or `war`)
 * Keep `spring-boot-starter-parent` intact in backend pom
 * Add other dependencies (`jpa`, `security`, etc.) in the future
 
-👉 **Outcome**: The generator becomes customizable and production-ready.
+**Outcome**: The generator becomes customizable and production-ready.
 
 ---
 
-## 📖 Final Project
+## Final Project
 
 Run:
 
@@ -200,7 +199,7 @@ my-app/
 ---
 
 
-## 🔑 Why `yo java-react`?
+## Why `yo java-react`?
 
 When you run:
 
@@ -220,7 +219,7 @@ That’s why your project folder is called `generator-java-react` — Yeoman aut
 
 ---
 
-### ⚙️ How it works internally
+### How it works internally
 
 1. **NPM package name** must follow convention:
 
@@ -245,7 +244,7 @@ So:
 
 ---
 
-### ✅ Why not `yo anything-else`?
+### Why not `yo anything-else`?
 
 You absolutely could! The command depends only on your generator’s name:
 
@@ -256,7 +255,7 @@ It’s just convention. In your case, we named the package `generator-java-react
 
 ---
 
-⚡ **In short**:
+**In short**:
 You run `yo java-react` because your package is `generator-java-react`. Yeoman strips the `generator-` prefix automatically.
 
 
