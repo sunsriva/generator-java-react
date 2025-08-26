@@ -1,0 +1,10 @@
+{
+  "name": "generator-java-react",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "keywords": ["yeoman-generator"],
+  "dependencies": {
+    "yeoman-generator": "^7.5.1"
+  }
+}
